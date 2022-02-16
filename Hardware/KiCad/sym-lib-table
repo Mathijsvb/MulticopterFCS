@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "flightController")(type "KiCad")(uri "${KIPRJMOD}/flightController.kicad_sym")(options "")(descr "Some custom parts for the flightController PCB"))
+)
