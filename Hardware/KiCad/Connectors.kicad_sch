@@ -2723,7 +2723,7 @@
     (effects (font (size 2 2)) (justify left bottom))
     (uuid 770ba7cf-26bd-42c8-8f36-287029a0d4cf)
   )
-  (text "XH2.54-7P" (at 266.7 130.81 0)
+  (text "XH2.54-7P" (at 268.605 128.905 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 86e710e2-2dcd-435c-b1f5-20b705bf21f1)
   )
