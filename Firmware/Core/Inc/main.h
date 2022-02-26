@@ -60,6 +60,26 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define IMU_INT_Pin GPIO_PIN_3
+#define IMU_INT_GPIO_Port GPIOE
+#define STATUS_LED1_R_Pin GPIO_PIN_8
+#define STATUS_LED1_R_GPIO_Port GPIOE
+#define STATUS_LED1_G_Pin GPIO_PIN_9
+#define STATUS_LED1_G_GPIO_Port GPIOE
+#define STATUS_LED1_B_Pin GPIO_PIN_10
+#define STATUS_LED1_B_GPIO_Port GPIOE
+#define STATUS_LED2_R_Pin GPIO_PIN_11
+#define STATUS_LED2_R_GPIO_Port GPIOE
+#define STATUS_LED2_G_Pin GPIO_PIN_12
+#define STATUS_LED2_G_GPIO_Port GPIOE
+#define STATUS_LED2_B_Pin GPIO_PIN_13
+#define STATUS_LED2_B_GPIO_Port GPIOE
+#define USB_VBUS_DEBUG_Pin GPIO_PIN_10
+#define USB_VBUS_DEBUG_GPIO_Port GPIOD
+#define BUZZ_ON_Pin GPIO_PIN_6
+#define BUZZ_ON_GPIO_Port GPIOC
+#define SD_CARD_DETECT_Pin GPIO_PIN_8
+#define SD_CARD_DETECT_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
