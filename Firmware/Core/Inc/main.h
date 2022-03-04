@@ -74,12 +74,16 @@ void Error_Handler(void);
 #define STATUS_LED2_G_GPIO_Port GPIOE
 #define STATUS_LED2_B_Pin GPIO_PIN_13
 #define STATUS_LED2_B_GPIO_Port GPIOE
+#define PS_INT_Pin GPIO_PIN_15
+#define PS_INT_GPIO_Port GPIOE
 #define USB_VBUS_DEBUG_Pin GPIO_PIN_10
 #define USB_VBUS_DEBUG_GPIO_Port GPIOD
 #define BUZZ_ON_Pin GPIO_PIN_6
 #define BUZZ_ON_GPIO_Port GPIOC
 #define SD_CARD_DETECT_Pin GPIO_PIN_8
 #define SD_CARD_DETECT_GPIO_Port GPIOA
+#define MAG_INT_Pin GPIO_PIN_0
+#define MAG_INT_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

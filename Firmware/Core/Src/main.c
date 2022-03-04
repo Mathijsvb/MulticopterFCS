@@ -1014,11 +1014,11 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(BUZZ_ON_GPIO_Port, BUZZ_ON_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : IMU_INT_Pin */
-  GPIO_InitStruct.Pin = IMU_INT_Pin;
+  /*Configure GPIO pins : IMU_INT_Pin PS_INT_Pin MAG_INT_Pin */
+  GPIO_InitStruct.Pin = IMU_INT_Pin|PS_INT_Pin|MAG_INT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(IMU_INT_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pins : STATUS_LED1_R_Pin STATUS_LED1_G_Pin STATUS_LED1_B_Pin STATUS_LED2_R_Pin
                            STATUS_LED2_G_Pin STATUS_LED2_B_Pin */
