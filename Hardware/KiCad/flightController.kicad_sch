@@ -379,6 +379,9 @@
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/c7599fb7-5bd5-4a8b-a548-c240de892bc5"
       (reference "#PWR0147") (unit 1) (value "GND") (footprint "")
     )
+    (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/03a6466c-4d2a-4d7d-a442-1fd904572bb3"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/0a926d99-b0b0-4f07-9824-db45d8d96a5d"
       (reference "#PWR?") (unit 1) (value "+3.3VA") (footprint "")
     )
@@ -753,6 +756,9 @@
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/2b98cc60-a171-415d-8529-0ec9e37e132a"
       (reference "J?") (unit 1) (value "USB_B_Mini") (footprint "Connector_USB:USB_Mini-B_Wuerth_65100516121_Horizontal")
+    )
+    (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/42c9d581-06df-4bf5-b373-bc4437fcdb08"
+      (reference "J?") (unit 1) (value "Conn_01x08") (footprint "")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/47288ad5-d63d-413c-87a5-e597224c4c7b"
       (reference "J?") (unit 1) (value "Conn_01x04") (footprint "")
