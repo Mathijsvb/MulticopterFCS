@@ -682,6 +682,9 @@
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/bd9f652b-46a4-4755-b466-0065c96d5ef1"
       (reference "C?") (unit 1) (value "10n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
+    (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/c001001c-3ea2-49a3-a3c0-30621f34bc51"
+      (reference "C?") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
+    )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/c4cd012f-20dd-475f-8c7e-02e18447c066"
       (reference "C?") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0603_1608Metric")
     )
@@ -877,6 +880,9 @@
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/60688777-75c4-46d4-8723-5c3e5b5043b5"
       (reference "R?") (unit 1) (value "560") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
+    (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/6807bf04-67e0-4c2d-b203-0925f53ebbf3"
+      (reference "R?") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0402_1005Metric")
+    )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/6d131718-3dfb-4e2d-b9ff-f161217cbafc"
       (reference "R?") (unit 1) (value "68") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
@@ -973,7 +979,13 @@
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/f69f3008-910b-4c4a-9174-827c0b6f8268"
       (reference "SW?") (unit 1) (value "SW_Push") (footprint "Button_Switch_SMD:SW_SPST_FSMSM")
     )
+    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/038b4a5f-e970-4935-970c-874be3f6ccc9"
+      (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
+    )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/097769bf-f169-40ca-81e3-8e4a23bc1c02"
+      (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
+    )
+    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/0b1cb6bf-3668-4090-b6b4-57279b482bb2"
       (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/2216affd-9523-400b-8d26-f303395bdde3"
@@ -988,6 +1000,9 @@
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/373335ad-76e6-4553-8e4e-04e41c57b91e"
       (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
+    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/46b806b9-0798-4643-a72a-ad6df5950d76"
+      (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
+    )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/488efad9-a642-44c7-90fc-1ab02145082e"
       (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
@@ -1000,13 +1015,25 @@
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/833856cf-9011-4a88-8230-aa05b282f3a8"
       (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
+    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/87c70792-1448-408c-a227-0cc1017d1407"
+      (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
+    )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/89d31b03-afec-4892-886d-6998b7c43ae0"
       (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/973d5dfa-0afc-4713-8be9-7cf14018c4a2"
       (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
+    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/bdd66cdf-ab69-4cfe-8946-c0b5621e2380"
+      (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
+    )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/cac74a82-6bd6-44cc-9d8a-8aaca4f58124"
+      (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
+    )
+    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/ce161db0-efa4-4602-8e74-cdeab4a5fbbb"
+      (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
+    )
+    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/d39344bb-aee3-43ee-91a2-93a50660d43c"
       (reference "TP?") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/d9826043-09b0-443e-adc8-4ec2641bb93d"
