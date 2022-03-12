@@ -2170,11 +2170,6 @@
     (effects (font (size 1.27 1.27) (thickness 0.254) bold) (justify left bottom))
     (uuid 587f90ef-57e8-48f2-b7e3-07dcd651a95f)
   )
-  (text "POWER IS NOT WORKING (TLV1117-33 4.7 is reccomended 4.6 what we have)"
-    (at 201.93 164.465 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 5ddf5309-8149-4d81-925e-8629e5c3e557)
-  )
   (text "i2c: 0x76 (write), 0x77 (read)" (at 217.17 70.485 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 630dd454-b3d7-426f-a6d8-1bfb27bd1710)
