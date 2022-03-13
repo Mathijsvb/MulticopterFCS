@@ -367,6 +367,9 @@
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/0a926d99-b0b0-4f07-9824-db45d8d96a5d"
       (reference "#PWR?") (unit 1) (value "+3.3VA") (footprint "")
     )
+    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/12c7c19a-fe90-4a5e-8c5b-1d6cfaf0f6c3"
+      (reference "#PWR?") (unit 1) (value "+3.3V") (footprint "")
+    )
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/167f6091-66ae-4a4b-b4c1-853fb45b6197"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
@@ -493,9 +496,6 @@
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/95b6e347-5040-4ace-b0b0-f9ce56d06670"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
-    (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/98f571b2-e632-46d2-97be-7684227ba538"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/9b0fe207-9a3a-42e9-93f6-9f26c9d9643e"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
@@ -558,9 +558,6 @@
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/d7f77302-d6bc-4f64-8f22-b81cd129f314"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/d8dbc099-3999-474e-bc20-5aa4b41f9e9b"
-      (reference "#PWR?") (unit 1) (value "+3.3V") (footprint "")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/ddc588d3-e808-4d46-bdf2-3c6ff800a1b0"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
@@ -721,9 +718,6 @@
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/f06fdf92-a7b7-4d61-b48e-8da78f5fc7c1"
       (reference "C?") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
-    (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/f5ae5283-581c-49d9-b1f0-75dad08cdad2"
-      (reference "C?") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
-    )
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/f7bbc280-ecb9-47c1-a98c-cf1effba7c45"
       (reference "C?") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
@@ -758,6 +752,9 @@
       (reference "FB?") (unit 1) (value "100@100MHz") (footprint "Inductor_SMD:L_0603_1608Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/33e51289-570d-4891-aca2-e742ff3dcc0d"
+      (reference "FB?") (unit 1) (value "100@100MHz") (footprint "Inductor_SMD:L_0603_1608Metric")
+    )
+    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/6f68e548-1f2d-4379-afc8-71ccfebc5fe1"
       (reference "FB?") (unit 1) (value "100@100MHz") (footprint "Inductor_SMD:L_0603_1608Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/7622f493-9f58-41f6-908f-24bad03c4f05"
@@ -806,7 +803,7 @@
       (reference "J?") (unit 1) (value "USB_B_Mini") (footprint "Connector_USB:USB_Mini-B_Wuerth_65100516121_Horizontal")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/9a50dc54-5232-4e43-b547-93d04f8fec82"
-      (reference "J?") (unit 1) (value "Conn_02x05_Odd_Even") (footprint "Connector_PinHeader_1.00mm:PinHeader_2x05_P1.00mm_Vertical_SMD")
+      (reference "J?") (unit 1) (value "1mm header") (footprint "Connector_PinHeader_1.00mm:PinHeader_2x05_P1.00mm_Vertical_SMD")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/a330160d-2c7d-4b1c-9ba9-abf8f08ed08a"
       (reference "J?") (unit 1) (value "MOLEX 5268-7P") (footprint "Connector_Molex:Molex_SPOX_5268-07A_1x07_P2.50mm_Horizontal")
