@@ -82,6 +82,8 @@ void Error_Handler(void);
 #define BUZZ_ON_GPIO_Port GPIOC
 #define SD_CARD_DETECT_Pin GPIO_PIN_8
 #define SD_CARD_DETECT_GPIO_Port GPIOA
+#define LED_EXT_Pin GPIO_PIN_5
+#define LED_EXT_GPIO_Port GPIOB
 #define MAG_INT_Pin GPIO_PIN_0
 #define MAG_INT_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
