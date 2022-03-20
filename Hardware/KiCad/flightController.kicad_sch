@@ -854,10 +854,10 @@
       (reference "J2") (unit 1) (value "USB_B_Mini") (footprint "Connector_USB:USB_Mini-B_Wuerth_65100516121_Horizontal")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/fe0cac13-ef4d-4559-8195-f668720e1950"
-      (reference "J3") (unit 1) (value "2.54mm header") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical")
+      (reference "J3") (unit 1) (value "2.54mm header") (footprint "flightController:PinHeader_1x08_P2.54mm_Vertical_lessSilk")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/f3214f2d-f503-4cda-bbd9-c485ba511c5b"
-      (reference "J4") (unit 1) (value "2.54mm header") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Horizontal")
+      (reference "J4") (unit 1) (value "2.54mm header") (footprint "flightController:PinHeader_2x08_P2.54mm_Horizontal_lessSilk")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/bd5e235c-2e57-40e4-8bc3-5ed6d54169f4"
       (reference "J5") (unit 1) (value "TF-01A") (footprint "flightController:TF-01A")
@@ -1075,12 +1075,6 @@
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/f69f3008-910b-4c4a-9174-827c0b6f8268"
       (reference "SW2") (unit 1) (value "SW_Push") (footprint "Button_Switch_SMD:SW_SPST_FSMSM")
     )
-    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/bc974914-1e85-4a05-a581-ebd12da6368b"
-      (reference "TP1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
-    )
-    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/0db0ac1d-67ed-4e3a-97f4-6cb96ed115b7"
-      (reference "TP2") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
-    )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/349dd31f-b790-473c-8ea6-2428f201271a"
       (reference "TP3") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
     )
@@ -1092,24 +1086,6 @@
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/89d31b03-afec-4892-886d-6998b7c43ae0"
       (reference "TP6") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
-    )
-    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/46b806b9-0798-4643-a72a-ad6df5950d76"
-      (reference "TP7") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
-    )
-    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/ce161db0-efa4-4602-8e74-cdeab4a5fbbb"
-      (reference "TP8") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
-    )
-    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/038b4a5f-e970-4935-970c-874be3f6ccc9"
-      (reference "TP9") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
-    )
-    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/d39344bb-aee3-43ee-91a2-93a50660d43c"
-      (reference "TP10") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
-    )
-    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/bdd66cdf-ab69-4cfe-8946-c0b5621e2380"
-      (reference "TP11") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
-    )
-    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/0b1cb6bf-3668-4090-b6b4-57279b482bb2"
-      (reference "TP12") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/e58e2217-3bfe-4b06-95b2-663fb8b9ad8b"
       (reference "TP13") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
@@ -1152,9 +1128,6 @@
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/394c09ca-56b1-4151-a8e9-1c1ae5aa9063"
       (reference "TP26") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
-    )
-    (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/edd0d1dd-ebb7-4db9-8fd8-02a7d228c919"
-      (reference "TP27") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/d9826043-09b0-443e-adc8-4ec2641bb93d"
       (reference "TP28") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
