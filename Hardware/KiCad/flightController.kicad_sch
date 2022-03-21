@@ -1145,7 +1145,7 @@
       (reference "U1") (unit 1) (value "MPU-6000") (footprint "Sensor_Motion:InvenSense_QFN-24_4x4mm_P0.5mm")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/25a516a0-8f3c-4bd0-986f-71befbf10dae"
-      (reference "U2") (unit 1) (value "HMC5883L") (footprint "Package_LGA:LGA-16_3x3mm_P0.5mm")
+      (reference "U2") (unit 1) (value "HMC5883L") (footprint "flightController:LGA-16_3x3mm_P0.5mm_Large_Pads")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/7d9a5876-92ae-4382-819b-ccb1882e3631"
       (reference "U3") (unit 1) (value "FM24C64B") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")

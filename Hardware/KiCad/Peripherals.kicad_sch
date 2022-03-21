@@ -2572,7 +2572,7 @@
     (property "Value" "HMC5883L" (id 1) (at 127.635 40.005 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Package_LGA:LGA-16_3x3mm_P0.5mm" (id 2) (at 122.555 69.85 0)
+    (property "Footprint" "flightController:LGA-16_3x3mm_P0.5mm_Large_Pads" (id 2) (at 122.555 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "http://www.memsic.com/userfiles/files/DataSheets/Magnetic-Sensors-Datasheets/MMC5883MA-RevC.pdf" (id 3) (at 120.015 26.67 0)
