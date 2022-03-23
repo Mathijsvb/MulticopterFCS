@@ -349,6 +349,9 @@
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/ed41dc0c-3bed-4beb-a45b-d5d48365218c"
       (reference "#PWR0118") (unit 1) (value "GND") (footprint "")
     )
+    (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/11358cd0-b61a-4aa7-9c15-470972a2d344"
+      (reference "#PWR0119") (unit 1) (value "GND") (footprint "")
+    )
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/070ceab1-b1a8-4dcb-bfcb-ff0a0b42ed10"
       (reference "#PWR0120") (unit 1) (value "GND") (footprint "")
     )
@@ -799,6 +802,9 @@
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/6850d6e5-ca92-46bc-ba50-d81e4006360c"
       (reference "C54") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
+    (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/32ec3f85-cc27-41b4-bf38-a2a120ec5728"
+      (reference "C55") (unit 1) (value "10nF") (footprint "Capacitor_SMD:C_0402_1005Metric")
+    )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/7b4711ca-b573-41b3-972f-7ce7463f2145"
       (reference "D1") (unit 1) (value "MHT194CRGBCT") (footprint "flightController:0605")
     )
@@ -938,10 +944,10 @@
       (reference "R13") (unit 1) (value "13k") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/73ebf3aa-cd73-428e-abdf-759468f78bc9"
-      (reference "R14") (unit 1) (value "1k") (footprint "Resistor_SMD:R_0402_1005Metric")
+      (reference "R14") (unit 1) (value "220") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/a8e57d60-28af-44ae-ab6f-2a6e0130865e"
-      (reference "R15") (unit 1) (value "1k") (footprint "Resistor_SMD:R_0402_1005Metric")
+      (reference "R15") (unit 1) (value "220") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/56a0e0a9-0cce-4dab-ab4c-c9db66edc361"
       (reference "R16") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0402_1005Metric")
@@ -1162,8 +1168,8 @@
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/fc60d14a-771b-488c-bcc1-473daa2855b1"
       (reference "U6") (unit 1) (value "AMS1117-5V") (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
     )
-    (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/8c7077be-f754-4e3a-8651-2305ff6275e9"
-      (reference "U7") (unit 1) (value "AMS1117-3.3") (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+    (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/bb78464a-6b50-41fa-972c-2541facac447"
+      (reference "U7") (unit 1) (value "SPX3819M5-L-3-3/TR") (footprint "Package_TO_SOT_SMD:SOT-23-5")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/13070cf7-2a75-4cbf-a761-a0ecdfcaf6ba"
       (reference "U8") (unit 1) (value "SMF05CT1G") (footprint "Package_TO_SOT_SMD:SOT-363_SC-70-6")
