@@ -1522,7 +1522,6 @@
     )
   )
 
-
   (junction (at 113.03 170.815) (diameter 0) (color 0 0 0 0)
     (uuid 015fe1b5-0959-4ff5-8bd9-546ee750673d)
   )
@@ -4347,7 +4346,7 @@
     (uuid 9a50dc54-5232-4e43-b547-93d04f8fec82)
     (property "Reference" "J6" (id 0) (at 175.895 83.185 0))
     (property "Value" "1mm header" (id 1) (at 175.895 99.06 0))
-    (property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_2x05_P1.00mm_Vertical_SMD" (id 2) (at 174.625 91.44 0)
+    (property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD" (id 2) (at 174.625 91.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 174.625 91.44 0)

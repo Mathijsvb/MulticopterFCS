@@ -878,7 +878,7 @@
       (reference "J5") (unit 1) (value "TF-01A") (footprint "flightController:TF-01A")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/9a50dc54-5232-4e43-b547-93d04f8fec82"
-      (reference "J6") (unit 1) (value "1mm header") (footprint "Connector_PinHeader_1.00mm:PinHeader_2x05_P1.00mm_Vertical_SMD")
+      (reference "J6") (unit 1) (value "1mm header") (footprint "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/7de17bde-18f6-4fab-aa9f-dfaca2c6801f"
       (reference "J7") (unit 1) (value "JST SH1-4P") (footprint "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal")

@@ -1185,7 +1185,6 @@
     )
   )
 
-
   (junction (at 122.555 37.465) (diameter 0) (color 0 0 0 0)
     (uuid 0640e06b-0f34-4852-881d-5d93a52c2348)
   )
@@ -2100,10 +2099,6 @@
   (text "i2c: 0xA0 (write), 0xA1 (read) " (at 165.735 70.485 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a42642a4-5289-440d-a9b8-3553405343b1)
-  )
-  (text "USB in can be 4.5V ()" (at 117.475 191.135 0)
-    (effects (font (size 1.27 1.27) (thickness 0.254) bold) (justify left bottom))
-    (uuid a65356e9-9331-42ca-aeed-939a5d0f58cf)
   )
   (text "CPOUT = 2.2nF 50V" (at 17.145 82.55 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
