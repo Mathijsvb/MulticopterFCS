@@ -4,6 +4,13 @@
 
   (paper "A4")
 
+  (title_block
+    (title "MulticopterFCS")
+    (date "2022-07-04")
+    (rev "V1.0")
+    (company "MatvBinn")
+  )
+
   (lib_symbols
   )
 
@@ -778,7 +785,7 @@
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/c001001c-3ea2-49a3-a3c0-30621f34bc51"
       (reference "C46") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
-    (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/ba93e0ca-be08-4f2a-ac13-94d4bf3448d1"
+    (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/1cccfad9-77ed-41ae-a006-b7fb3465c41a"
       (reference "C47") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
     (path "/b07d43c0-4d18-408b-9d9e-0ce113f0ef7f/eb0c9166-7641-4202-86e7-de712e718a1c"
@@ -800,10 +807,10 @@
       (reference "C53") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/6850d6e5-ca92-46bc-ba50-d81e4006360c"
-      (reference "C54") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (reference "C54") (unit 1) (value "10n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/32ec3f85-cc27-41b4-bf38-a2a120ec5728"
-      (reference "C55") (unit 1) (value "10nF") (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (reference "C55") (unit 1) (value "10n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/7b4711ca-b573-41b3-972f-7ce7463f2145"
       (reference "D1") (unit 1) (value "MHT194CRGBCT") (footprint "flightController:0605")
