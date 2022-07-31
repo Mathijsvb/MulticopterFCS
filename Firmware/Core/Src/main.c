@@ -47,8 +47,6 @@ I2C_HandleTypeDef hi2c1;
 I2C_HandleTypeDef hi2c2;
 I2C_HandleTypeDef hi2c4;
 
-SD_HandleTypeDef hsd1;
-
 SPI_HandleTypeDef hspi4;
 
 TIM_HandleTypeDef htim3;
@@ -61,7 +59,8 @@ UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
-osThreadId defaultTaskHandle;
+osThreadId BlinkLED1Handle;
+osThreadId BlinkLED2Handle;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -72,7 +71,6 @@ void PeriphCommonClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_I2C2_Init(void);
-static void MX_SDMMC1_SD_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_TIM5_Init(void);
 static void MX_USART1_UART_Init(void);
@@ -85,7 +83,8 @@ static void MX_I2C4_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_SPI4_Init(void);
-void StartDefaultTask(void const * argument);
+void StartBlinkLED1(void const * argument);
+void StartBlinkLED2(void const * argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -129,7 +128,6 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   MX_I2C2_Init();
-  MX_SDMMC1_SD_Init();
   MX_TIM4_Init();
   MX_TIM5_Init();
   MX_USART1_UART_Init();
@@ -143,6 +141,7 @@ int main(void)
   MX_TIM3_Init();
   MX_SPI4_Init();
   /* USER CODE BEGIN 2 */
+
 
   /* USER CODE END 2 */
 
@@ -163,9 +162,13 @@ int main(void)
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
-  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+  /* definition and creation of BlinkLED1 */
+  osThreadDef(BlinkLED1, StartBlinkLED1, osPriorityLow, 0, 128);
+  BlinkLED1Handle = osThreadCreate(osThread(BlinkLED1), NULL);
+
+  /* definition and creation of BlinkLED2 */
+  osThreadDef(BlinkLED2, StartBlinkLED2, osPriorityBelowNormal, 0, 128);
+  BlinkLED2Handle = osThreadCreate(osThread(BlinkLED2), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -198,14 +201,22 @@ void SystemClock_Config(void)
   /** Supply configuration update enable
   */
   HAL_PWREx_ConfigSupply(PWR_LDO_SUPPLY);
+
   /** Configure the main internal regulator output voltage
   */
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  while(!__HAL_PWR_GET_FLAG(PWR_FLAG_VOSRDY)) {}
+
+  __HAL_RCC_SYSCFG_CLK_ENABLE();
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE0);
 
   while(!__HAL_PWR_GET_FLAG(PWR_FLAG_VOSRDY)) {}
+
   /** Macro to configure the PLL clock source
   */
   __HAL_RCC_PLL_PLLSOURCE_CONFIG(RCC_PLLSOURCE_HSE);
+
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
@@ -225,6 +236,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
@@ -254,17 +266,8 @@ void PeriphCommonClock_Config(void)
 
   /** Initializes the peripherals clock
   */
-  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USB|RCC_PERIPHCLK_ADC
-                              |RCC_PERIPHCLK_I2C2|RCC_PERIPHCLK_I2C1
-                              |RCC_PERIPHCLK_SDMMC|RCC_PERIPHCLK_USART1;
-  PeriphClkInitStruct.PLL2.PLL2M = 1;
-  PeriphClkInitStruct.PLL2.PLL2N = 10;
-  PeriphClkInitStruct.PLL2.PLL2P = 2;
-  PeriphClkInitStruct.PLL2.PLL2Q = 4;
-  PeriphClkInitStruct.PLL2.PLL2R = 4;
-  PeriphClkInitStruct.PLL2.PLL2RGE = RCC_PLL2VCIRANGE_3;
-  PeriphClkInitStruct.PLL2.PLL2VCOSEL = RCC_PLL2VCOMEDIUM;
-  PeriphClkInitStruct.PLL2.PLL2FRACN = 0;
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USB|RCC_PERIPHCLK_I2C2
+                              |RCC_PERIPHCLK_I2C1|RCC_PERIPHCLK_USART1;
   PeriphClkInitStruct.PLL3.PLL3M = 1;
   PeriphClkInitStruct.PLL3.PLL3N = 10;
   PeriphClkInitStruct.PLL3.PLL3P = 2;
@@ -273,11 +276,9 @@ void PeriphCommonClock_Config(void)
   PeriphClkInitStruct.PLL3.PLL3RGE = RCC_PLL3VCIRANGE_3;
   PeriphClkInitStruct.PLL3.PLL3VCOSEL = RCC_PLL3VCOMEDIUM;
   PeriphClkInitStruct.PLL3.PLL3FRACN = 0;
-  PeriphClkInitStruct.SdmmcClockSelection = RCC_SDMMCCLKSOURCE_PLL2;
   PeriphClkInitStruct.Usart16ClockSelection = RCC_USART16CLKSOURCE_PLL3;
   PeriphClkInitStruct.I2c123ClockSelection = RCC_I2C123CLKSOURCE_PLL3;
   PeriphClkInitStruct.UsbClockSelection = RCC_USBCLKSOURCE_PLL3;
-  PeriphClkInitStruct.AdcClockSelection = RCC_ADCCLKSOURCE_PLL2;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -302,6 +303,7 @@ static void MX_ADC1_Init(void)
   /* USER CODE BEGIN ADC1_Init 1 */
 
   /* USER CODE END ADC1_Init 1 */
+
   /** Common config
   */
   hadc1.Instance = ADC1;
@@ -323,6 +325,7 @@ static void MX_ADC1_Init(void)
   {
     Error_Handler();
   }
+
   /** Configure the ADC multi-mode
   */
   multimode.Mode = ADC_MODE_INDEPENDENT;
@@ -330,6 +333,7 @@ static void MX_ADC1_Init(void)
   {
     Error_Handler();
   }
+
   /** Configure Regular Channel
   */
   sConfig.Channel = ADC_CHANNEL_3;
@@ -377,12 +381,14 @@ static void MX_I2C1_Init(void)
   {
     Error_Handler();
   }
+
   /** Configure Analogue filter
   */
   if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
   {
     Error_Handler();
   }
+
   /** Configure Digital filter
   */
   if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK)
@@ -423,12 +429,14 @@ static void MX_I2C2_Init(void)
   {
     Error_Handler();
   }
+
   /** Configure Analogue filter
   */
   if (HAL_I2CEx_ConfigAnalogFilter(&hi2c2, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
   {
     Error_Handler();
   }
+
   /** Configure Digital filter
   */
   if (HAL_I2CEx_ConfigDigitalFilter(&hi2c2, 0) != HAL_OK)
@@ -469,12 +477,14 @@ static void MX_I2C4_Init(void)
   {
     Error_Handler();
   }
+
   /** Configure Analogue filter
   */
   if (HAL_I2CEx_ConfigAnalogFilter(&hi2c4, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
   {
     Error_Handler();
   }
+
   /** Configure Digital filter
   */
   if (HAL_I2CEx_ConfigDigitalFilter(&hi2c4, 0) != HAL_OK)
@@ -484,37 +494,6 @@ static void MX_I2C4_Init(void)
   /* USER CODE BEGIN I2C4_Init 2 */
 
   /* USER CODE END I2C4_Init 2 */
-
-}
-
-/**
-  * @brief SDMMC1 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_SDMMC1_SD_Init(void)
-{
-
-  /* USER CODE BEGIN SDMMC1_Init 0 */
-
-  /* USER CODE END SDMMC1_Init 0 */
-
-  /* USER CODE BEGIN SDMMC1_Init 1 */
-
-  /* USER CODE END SDMMC1_Init 1 */
-  hsd1.Instance = SDMMC1;
-  hsd1.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
-  hsd1.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
-  hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
-  hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
-  hsd1.Init.ClockDiv = 3;
-  if (HAL_SD_Init(&hsd1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN SDMMC1_Init 2 */
-
-  /* USER CODE END SDMMC1_Init 2 */
 
 }
 
@@ -1005,7 +984,6 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(BUZZ_ON_GPIO_Port, BUZZ_ON_Pin, GPIO_PIN_RESET);
@@ -1062,22 +1040,56 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE END 4 */
 
-/* USER CODE BEGIN Header_StartDefaultTask */
+/* USER CODE BEGIN Header_StartBlinkLED1 */
 /**
-  * @brief  Function implementing the defaultTask thread.
+  * @brief  Function implementing the BlinkLED1 thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
+/* USER CODE END Header_StartBlinkLED1 */
+void StartBlinkLED1(void const * argument)
 {
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
+  HAL_GPIO_WritePin(STATUS_LED1_R_GPIO_Port, STATUS_LED1_R_Pin, 1);
+  HAL_GPIO_WritePin(STATUS_LED1_G_GPIO_Port, STATUS_LED1_G_Pin, 1);
+  HAL_GPIO_WritePin(STATUS_LED1_B_GPIO_Port, STATUS_LED1_B_Pin, 1);
+
   for(;;)
   {
-    osDelay(1);
+	HAL_GPIO_TogglePin(STATUS_LED1_R_GPIO_Port, STATUS_LED1_R_Pin);
+    osDelay(500);
   }
+
+  osThreadTerminate(NULL);
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartBlinkLED2 */
+/**
+* @brief Function implementing the BlinkLED2 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartBlinkLED2 */
+void StartBlinkLED2(void const * argument)
+{
+
+
+  /* USER CODE BEGIN StartBlinkLED2 */
+  /* Infinite loop */
+  HAL_GPIO_WritePin(STATUS_LED2_R_GPIO_Port, STATUS_LED2_R_Pin, 1);
+  HAL_GPIO_WritePin(STATUS_LED2_G_GPIO_Port, STATUS_LED2_G_Pin, 1);
+  HAL_GPIO_WritePin(STATUS_LED2_B_GPIO_Port, STATUS_LED2_B_Pin, 0);
+
+  for(;;)
+  {
+	HAL_GPIO_TogglePin(STATUS_LED2_B_GPIO_Port, STATUS_LED2_B_Pin);
+	osDelay(500);
+  }
+
+  osThreadTerminate(NULL);
+  /* USER CODE END StartBlinkLED2 */
 }
 
 /**
@@ -1132,4 +1144,3 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-
