@@ -1122,8 +1122,19 @@ void Error_Handler(void)
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
+
+  HAL_GPIO_WritePin(STATUS_LED1_R_GPIO_Port, STATUS_LED1_R_Pin, 1);
+  HAL_GPIO_WritePin(STATUS_LED1_G_GPIO_Port, STATUS_LED1_G_Pin, 1);
+  HAL_GPIO_WritePin(STATUS_LED1_B_GPIO_Port, STATUS_LED1_B_Pin, 1);
+  HAL_GPIO_WritePin(STATUS_LED2_R_GPIO_Port, STATUS_LED2_R_Pin, 1);
+  HAL_GPIO_WritePin(STATUS_LED2_G_GPIO_Port, STATUS_LED2_G_Pin, 1);
+  HAL_GPIO_WritePin(STATUS_LED2_B_GPIO_Port, STATUS_LED2_B_Pin, 1);
+
   while (1)
   {
+	  HAL_GPIO_TogglePin(STATUS_LED1_R_GPIO_Port, STATUS_LED1_R_Pin);
+	  HAL_Delay(100);
+	  HAL_GPIO_TogglePin(STATUS_LED2_R_GPIO_Port, STATUS_LED2_R_Pin);
   }
   /* USER CODE END Error_Handler_Debug */
 }
