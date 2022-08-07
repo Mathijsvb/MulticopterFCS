@@ -6,5 +6,6 @@
 
 # all files in directory Core
 !Firmware/Core/*
+!Core/*
 
 !STM32H743_flight_control.ioc
