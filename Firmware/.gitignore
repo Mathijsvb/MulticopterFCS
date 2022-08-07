@@ -5,6 +5,6 @@
 !.gitignore
 
 # all files in directory Core
-!Core/*
+!Firmware/Core/*
 
 !STM32H743_flight_control.ioc
