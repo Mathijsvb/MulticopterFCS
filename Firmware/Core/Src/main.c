@@ -1074,17 +1074,15 @@ void StartBlinkLED1(void const * argument)
 /* USER CODE END Header_StartBlinkLED2 */
 void StartBlinkLED2(void const * argument)
 {
-
-
   /* USER CODE BEGIN StartBlinkLED2 */
   /* Infinite loop */
   HAL_GPIO_WritePin(STATUS_LED2_R_GPIO_Port, STATUS_LED2_R_Pin, 1);
   HAL_GPIO_WritePin(STATUS_LED2_G_GPIO_Port, STATUS_LED2_G_Pin, 1);
-  HAL_GPIO_WritePin(STATUS_LED2_B_GPIO_Port, STATUS_LED2_B_Pin, 0);
+  HAL_GPIO_WritePin(STATUS_LED2_B_GPIO_Port, STATUS_LED2_B_Pin, 1);
 
   for(;;)
   {
-	HAL_GPIO_TogglePin(STATUS_LED2_B_GPIO_Port, STATUS_LED2_B_Pin);
+	HAL_GPIO_TogglePin(STATUS_LED2_R_GPIO_Port, STATUS_LED2_R_Pin);
 	osDelay(500);
   }
 
