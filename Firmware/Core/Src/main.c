@@ -1057,8 +1057,15 @@ void StartBlinkLED1(void const * argument)
 
   for(;;)
   {
+	HAL_GPIO_TogglePin(STATUS_LED1_B_GPIO_Port, STATUS_LED1_B_Pin);
+	osDelay(500);
+	HAL_GPIO_TogglePin(STATUS_LED1_B_GPIO_Port, STATUS_LED1_B_Pin);
 	HAL_GPIO_TogglePin(STATUS_LED1_R_GPIO_Port, STATUS_LED1_R_Pin);
-    osDelay(500);
+	osDelay(500);
+	HAL_GPIO_TogglePin(STATUS_LED1_R_GPIO_Port, STATUS_LED1_R_Pin);
+	HAL_GPIO_TogglePin(STATUS_LED1_G_GPIO_Port, STATUS_LED1_G_Pin);
+	osDelay(500);
+	HAL_GPIO_TogglePin(STATUS_LED1_G_GPIO_Port, STATUS_LED1_G_Pin);
   }
 
   osThreadTerminate(NULL);
@@ -1084,6 +1091,14 @@ void StartBlinkLED2(void const * argument)
   {
 	HAL_GPIO_TogglePin(STATUS_LED2_R_GPIO_Port, STATUS_LED2_R_Pin);
 	osDelay(500);
+	HAL_GPIO_TogglePin(STATUS_LED2_R_GPIO_Port, STATUS_LED2_R_Pin);
+	HAL_GPIO_TogglePin(STATUS_LED2_G_GPIO_Port, STATUS_LED2_G_Pin);
+	osDelay(500);
+	HAL_GPIO_TogglePin(STATUS_LED2_G_GPIO_Port, STATUS_LED2_G_Pin);
+	HAL_GPIO_TogglePin(STATUS_LED2_B_GPIO_Port, STATUS_LED2_B_Pin);
+	osDelay(500);
+	HAL_GPIO_TogglePin(STATUS_LED2_B_GPIO_Port, STATUS_LED2_B_Pin);
+
   }
 
   osThreadTerminate(NULL);
