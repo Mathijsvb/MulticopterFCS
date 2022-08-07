@@ -1020,7 +1020,7 @@
       (reference "Q2") (unit 1) (value "PMBT3904") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/ef4790f4-6058-4c5f-9a87-357b39607322"
-      (reference "R1") (unit 1) (value "220") (footprint "Resistor_SMD:R_0402_1005Metric")
+      (reference "R1") (unit 1) (value "49") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/6d131718-3dfb-4e2d-b9ff-f161217cbafc"
       (reference "R2") (unit 1) (value "68") (footprint "Resistor_SMD:R_0603_1608Metric")
@@ -1032,7 +1032,7 @@
       (reference "R4") (unit 1) (value "10") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/8b407f35-f210-43db-b0f3-11de8871524e"
-      (reference "R5") (unit 1) (value "220") (footprint "Resistor_SMD:R_0402_1005Metric")
+      (reference "R5") (unit 1) (value "49") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/3eaee4e0-6b5c-45ea-9cdb-0ada4249b3db"
       (reference "R6") (unit 1) (value "68") (footprint "Resistor_SMD:R_0603_1608Metric")

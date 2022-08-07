@@ -1192,7 +1192,6 @@
     )
   )
 
-
   (junction (at 122.555 37.465) (diameter 0) (color 0 0 0 0)
     (uuid 0640e06b-0f34-4852-881d-5d93a52c2348)
   )
@@ -3623,7 +3622,7 @@
     (in_bom yes) (on_board yes)
     (uuid 8b407f35-f210-43db-b0f3-11de8871524e)
     (property "Reference" "R5" (id 0) (at 55.245 123.19 0))
-    (property "Value" "220" (id 1) (at 54.61 125.095 0))
+    (property "Value" "49" (id 1) (at 54.61 125.095 0))
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (id 2) (at 57.785 123.825 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -4321,7 +4320,7 @@
     (in_bom yes) (on_board yes)
     (uuid ef4790f4-6058-4c5f-9a87-357b39607322)
     (property "Reference" "R1" (id 0) (at 20.32 123.19 0))
-    (property "Value" "220" (id 1) (at 19.685 125.095 0))
+    (property "Value" "49" (id 1) (at 19.685 125.095 0))
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (id 2) (at 22.86 123.825 0)
       (effects (font (size 1.27 1.27)) hide)
     )
