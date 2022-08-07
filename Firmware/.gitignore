@@ -1,11 +1,10 @@
 # ignore everything
 *
-!*/
 # except for .gitignore files in the current directory
 !.gitignore
 
 # all files in directory Core
-!Firmware/Core/*
-!Core/*
+!Core/
+!Core/**
 
 !STM32H743_flight_control.ioc
