@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
+extern DMA_HandleTypeDef hdma_spi4_rx;
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
@@ -88,30 +89,11 @@ void HAL_MspInit(void)
 void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
   if(hadc->Instance==ADC1)
   {
   /* USER CODE BEGIN ADC1_MspInit 0 */
 
   /* USER CODE END ADC1_MspInit 0 */
-
-  /** Initializes the peripherals clock
-  */
-    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_ADC;
-    PeriphClkInitStruct.PLL2.PLL2M = 1;
-    PeriphClkInitStruct.PLL2.PLL2N = 10;
-    PeriphClkInitStruct.PLL2.PLL2P = 2;
-    PeriphClkInitStruct.PLL2.PLL2Q = 4;
-    PeriphClkInitStruct.PLL2.PLL2R = 4;
-    PeriphClkInitStruct.PLL2.PLL2RGE = RCC_PLL2VCIRANGE_3;
-    PeriphClkInitStruct.PLL2.PLL2VCOSEL = RCC_PLL2VCOMEDIUM;
-    PeriphClkInitStruct.PLL2.PLL2FRACN = 0;
-    PeriphClkInitStruct.AdcClockSelection = RCC_ADCCLKSOURCE_PLL2;
-    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
     /* Peripheral clock enable */
     __HAL_RCC_ADC12_CLK_ENABLE();
 
@@ -333,22 +315,11 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
 void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
   if(hspi->Instance==SPI4)
   {
   /* USER CODE BEGIN SPI4_MspInit 0 */
 
   /* USER CODE END SPI4_MspInit 0 */
-
-  /** Initializes the peripherals clock
-  */
-    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_SPI4;
-    PeriphClkInitStruct.Spi45ClockSelection = RCC_SPI45CLKSOURCE_D2PCLK1;
-    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
     /* Peripheral clock enable */
     __HAL_RCC_SPI4_CLK_ENABLE();
 
@@ -365,6 +336,31 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
     GPIO_InitStruct.Alternate = GPIO_AF5_SPI4;
     HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
+    /* SPI4 DMA Init */
+    /* SPI4_RX Init */
+    hdma_spi4_rx.Instance = DMA1_Stream0;
+    hdma_spi4_rx.Init.Request = DMA_REQUEST_SPI4_RX;
+    hdma_spi4_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_spi4_rx.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_spi4_rx.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_spi4_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    hdma_spi4_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+    hdma_spi4_rx.Init.Mode = DMA_NORMAL;
+    hdma_spi4_rx.Init.Priority = DMA_PRIORITY_LOW;
+    hdma_spi4_rx.Init.FIFOMode = DMA_FIFOMODE_ENABLE;
+    hdma_spi4_rx.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
+    hdma_spi4_rx.Init.MemBurst = DMA_MBURST_SINGLE;
+    hdma_spi4_rx.Init.PeriphBurst = DMA_PBURST_SINGLE;
+    if (HAL_DMA_Init(&hdma_spi4_rx) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(hspi,hdmarx,hdma_spi4_rx);
+
+    /* SPI4 interrupt Init */
+    HAL_NVIC_SetPriority(SPI4_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(SPI4_IRQn);
   /* USER CODE BEGIN SPI4_MspInit 1 */
 
   /* USER CODE END SPI4_MspInit 1 */
@@ -395,6 +391,11 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi)
     */
     HAL_GPIO_DeInit(GPIOE, GPIO_PIN_2|GPIO_PIN_5|GPIO_PIN_6);
 
+    /* SPI4 DMA DeInit */
+    HAL_DMA_DeInit(hspi->hdmarx);
+
+    /* SPI4 interrupt DeInit */
+    HAL_NVIC_DisableIRQ(SPI4_IRQn);
   /* USER CODE BEGIN SPI4_MspDeInit 1 */
 
   /* USER CODE END SPI4_MspDeInit 1 */
@@ -570,22 +571,11 @@ void HAL_TIM_PWM_MspDeInit(TIM_HandleTypeDef* htim_pwm)
 void HAL_UART_MspInit(UART_HandleTypeDef* huart)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
   if(huart->Instance==UART4)
   {
   /* USER CODE BEGIN UART4_MspInit 0 */
 
   /* USER CODE END UART4_MspInit 0 */
-
-  /** Initializes the peripherals clock
-  */
-    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_UART4;
-    PeriphClkInitStruct.Usart234578ClockSelection = RCC_USART234578CLKSOURCE_D2PCLK1;
-    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
     /* Peripheral clock enable */
     __HAL_RCC_UART4_CLK_ENABLE();
 
@@ -610,16 +600,6 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
   /* USER CODE BEGIN UART5_MspInit 0 */
 
   /* USER CODE END UART5_MspInit 0 */
-
-  /** Initializes the peripherals clock
-  */
-    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_UART5;
-    PeriphClkInitStruct.Usart234578ClockSelection = RCC_USART234578CLKSOURCE_D2PCLK1;
-    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
     /* Peripheral clock enable */
     __HAL_RCC_UART5_CLK_ENABLE();
 
@@ -644,7 +624,6 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
   /* USER CODE BEGIN USART1_MspInit 0 */
 
   /* USER CODE END USART1_MspInit 0 */
-
     /* Peripheral clock enable */
     __HAL_RCC_USART1_CLK_ENABLE();
 
@@ -669,16 +648,6 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
   /* USER CODE BEGIN USART2_MspInit 0 */
 
   /* USER CODE END USART2_MspInit 0 */
-
-  /** Initializes the peripherals clock
-  */
-    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART2;
-    PeriphClkInitStruct.Usart234578ClockSelection = RCC_USART234578CLKSOURCE_D2PCLK1;
-    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
     /* Peripheral clock enable */
     __HAL_RCC_USART2_CLK_ENABLE();
 
@@ -703,16 +672,6 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
   /* USER CODE BEGIN USART3_MspInit 0 */
 
   /* USER CODE END USART3_MspInit 0 */
-
-  /** Initializes the peripherals clock
-  */
-    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART3;
-    PeriphClkInitStruct.Usart234578ClockSelection = RCC_USART234578CLKSOURCE_D2PCLK1;
-    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
     /* Peripheral clock enable */
     __HAL_RCC_USART3_CLK_ENABLE();
 

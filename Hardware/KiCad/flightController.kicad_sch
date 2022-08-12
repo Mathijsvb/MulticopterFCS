@@ -864,13 +864,13 @@
       (reference "D2") (unit 1) (value "MHT194CRGBCT") (footprint "flightController:0605")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/af965509-ef82-496f-a549-5303f8d10db8"
-      (reference "D3") (unit 1) (value "LED_Small") (footprint "LED_SMD:LED_0603_1608Metric")
+      (reference "D3") (unit 1) (value "LED_Green") (footprint "LED_SMD:LED_0603_1608Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/9b201321-94b0-4f28-864e-48aa97cca3d8"
-      (reference "D4") (unit 1) (value "LED_Small") (footprint "LED_SMD:LED_0603_1608Metric")
+      (reference "D4") (unit 1) (value "LED_Green") (footprint "LED_SMD:LED_0603_1608Metric")
     )
     (path "/c06e5e7c-c9d3-4ec8-9cbe-adebe02c2230/8c278947-7c77-4617-9a3d-665d5223b9d3"
-      (reference "D5") (unit 1) (value "LED_Small") (footprint "LED_SMD:LED_0603_1608Metric")
+      (reference "D5") (unit 1) (value "LED_Green") (footprint "LED_SMD:LED_0603_1608Metric")
     )
     (path "/36610400-2025-4f94-8ad5-a4c55b7ca6d5/79bf6ade-a9db-48ea-b7ca-1bb2c1072b2e"
       (reference "D6") (unit 1) (value "B5819W SL") (footprint "Diode_SMD:D_SOD-123")
