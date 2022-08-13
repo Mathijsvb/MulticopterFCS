@@ -17,6 +17,7 @@ MulticopterFCS is a flight controller build from the ground up. It is meant to b
 * Micro SD Card slot
 * I²C
 * 2x UART
+* 2x USB Mini B 
 * IBUS header for external receiver
 * 6x ESC header
 * Buzzer header
