@@ -70,4 +70,4 @@ Future goals on the roadmap are likely to be Simultaneous Localization and Mappi
 
 # Licensing
 
-This project is open source. A license will be added soon.
+This an open source project released under the BSD 3-Clause License.
