@@ -24,6 +24,7 @@ MulticopterFCS is a flight controller build from the ground up. It is meant to b
 | 1        	| I²C      	| JST SH 4-pin             	| External I²C connector                                               	|
 | 2        	| UART     	| JST SH 4-pin             	| External UART connector                                              	|
 | 1        	| Battery  	| JST SH 2-pin             	| Used to measure battery voltage                                      	|
+| 1        	| LED	  	| JST SH 8-pin             	| To control external LEDs                                      	|
 | 1        	| IBUS     	| 2.54 mm pitch header     	| IBUS used by external receivers to communicate remote control signals |
 | 6        	| PWM      	| 2.54 mm pitch header     	| PWM is used to control external ESC's                                	|
 | 1        	| Buzzer   	| 2.54 mm pitch header     	| For connecting a buzzer                                              	|
