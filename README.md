@@ -1,7 +1,5 @@
 # About the project
 
-**This system is still a work in progress, use anything inside this repository at your own risk.**
-
 MulticopterFCS is a flight controller build from the ground up. It is meant to be a development platform mainly focused on autonomous indoor flying of multi-rotor drones. 
 
 |Diagram|Board|
@@ -19,17 +17,18 @@ MulticopterFCS is a flight controller build from the ground up. It is meant to b
 * 2x RGB LED
 
 **Connectors:**
-* SWD/JTAG for programming
-* Micro SD Card slot
-* I²C
-* 2x UART
-* 2x USB Mini B 
-* IBUS header for external receiver
-* 6x ESC header
-* Buzzer header
-* RPLiDAR A1M8
-* External LEDs
-* Battery (4s LiPo max)
+| **quantity** 	| **purpose**  	| **connector type**           	| **Comment**                                                              	|
+|----------	|----------	|--------------------------	|----------------------------------------------------------------------	|
+| 1        	| SWD/JTAG 	| 1.27 mm pitch 10-pin     	| For programming and debugging                                        	|
+| 1        	| SDIO     	| Micro SD Card            	| For logging data during the flight                                   	|
+| 1        	| I²C      	| JST SH 4-pin             	| External I²C connector                                               	|
+| 2        	| UART     	| JST SH 4-pin             	| External UART connector                                              	|
+| 1        	| Battery  	| JST SH 2-pin             	| Used to measure battery voltage                                      	|
+| 1        	| IBUS     	| 2.54 mm pitch header     	| IBUS used by external receivers to communicate remote contol signals 	|
+| 6        	| PWM      	| 2.54 mm pitch header     	| PWM is used to control external ESC's                                	|
+| 1        	| Buzzer   	| 2.54 mm pitch header     	| For connecting a buzzer                                              	|
+| 1        	| RPLiDAR  	| 2.50 mm MOLEX SPOX 7-pin 	| This connector will be used for the RPLiDAR                          	|
+| 2        	| USB      	| USB Mini B               	| USB1 goes directly to the MCU, USB2 gets convertet to serial first   	|
 
 # Roadmap:
 
@@ -69,5 +68,7 @@ MulticopterFCS is a flight controller build from the ground up. It is meant to b
 Future goals on the roadmap are likely to be Simultaneous Localization and Mapping using a LiDAR implementation. Based on this, autonomous indoor flight could be developed.
 
 # Licensing
+
+**This system is still a work in progress, use anything inside this repository at your own risk.**
 
 This an open source project released under the BSD 3-Clause License.
