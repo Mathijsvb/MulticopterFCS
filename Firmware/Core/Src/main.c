@@ -145,7 +145,7 @@ int main(void)
   MX_SPI4_Init();
   /* USER CODE BEGIN 2 */
 
-  MPU6000_init(&hspi4);
+  //MPU6000_init(&hspi4);
 
   /* USER CODE END 2 */
 
@@ -526,7 +526,7 @@ static void MX_SPI4_Init(void)
   hspi4.Init.CLKPolarity = SPI_POLARITY_HIGH;
   hspi4.Init.CLKPhase = SPI_PHASE_2EDGE;
   hspi4.Init.NSS = SPI_NSS_SOFT;
-  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_256;
+  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
   hspi4.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi4.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -1072,7 +1072,7 @@ static void MX_GPIO_Init(void)
 void StartBlinkLED1(void const * argument)
 {
   /* USER CODE BEGIN 5 */
-  /* Infinite loop */
+  // Setup for both Debug LEDs
   HAL_GPIO_WritePin(STATUS_LED1_R_GPIO_Port, STATUS_LED1_R_Pin, 1);
   HAL_GPIO_WritePin(STATUS_LED1_G_GPIO_Port, STATUS_LED1_G_Pin, 1);
   HAL_GPIO_WritePin(STATUS_LED1_B_GPIO_Port, STATUS_LED1_B_Pin, 1);
@@ -1080,20 +1080,25 @@ void StartBlinkLED1(void const * argument)
   HAL_GPIO_WritePin(STATUS_LED2_G_GPIO_Port, STATUS_LED2_G_Pin, 1);
   HAL_GPIO_WritePin(STATUS_LED2_B_GPIO_Port, STATUS_LED2_B_Pin, 1);
 
+  // Infinite loop
   for(;;)
   {
+	// Blue
 	HAL_GPIO_TogglePin(STATUS_LED1_B_GPIO_Port, STATUS_LED1_B_Pin);
 	osDelay(500);
 	HAL_GPIO_TogglePin(STATUS_LED1_B_GPIO_Port, STATUS_LED1_B_Pin);
+	// Red
 	HAL_GPIO_TogglePin(STATUS_LED1_R_GPIO_Port, STATUS_LED1_R_Pin);
 	osDelay(500);
 	HAL_GPIO_TogglePin(STATUS_LED1_R_GPIO_Port, STATUS_LED1_R_Pin);
+	// Green
 	HAL_GPIO_TogglePin(STATUS_LED1_G_GPIO_Port, STATUS_LED1_G_Pin);
 	osDelay(500);
 	HAL_GPIO_TogglePin(STATUS_LED1_G_GPIO_Port, STATUS_LED1_G_Pin);
   }
 
-  osThreadTerminate(NULL);
+  osThreadTerminate(NULL); // Good practice to add for if you somehow exit the loop
+
   /* USER CODE END 5 */
 }
 

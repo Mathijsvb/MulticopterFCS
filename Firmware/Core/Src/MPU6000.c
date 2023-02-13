@@ -30,8 +30,11 @@ void spiReadOneByte(SPI_HandleTypeDef *hspi, uint8_t reg, uint8_t* pData) // ***
 uint8_t MPU6000_init(SPI_HandleTypeDef *MPU6000_SPI) {
 
 	uint8_t whoAmI;
-
+	uint8_t addr[2] = {(MPU6000_WHOAMI | 0x80), 0};
+	uint8_t addr_null = 0;
 	__HAL_SPI_ENABLE(MPU6000_SPI);
+
+	HAL_SPI_TransmitReceive(MPU6000_SPI, addr, &whoAmI, 2, 10);
 
     spiWriteOneByte(MPU6000_SPI, MPU6000_PWR_MGMT_1, BIT_H_RESET);  // reset device configuration
     HAL_Delay(150);
