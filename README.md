@@ -46,15 +46,21 @@ MulticopterFCS is a flight controller build from the ground up. It is meant to b
 5. ✔️ Manufacturing the PCB
 6.  Testing
 	1. ✔️ Programming MCU
-	2. ⚠ Gyro/Accelerometer
+	2. ❌ Gyro/Accelerometer
 		1.  ✔️ Find a the reason for to the Gyro/Accelerometer not working
 		*   The MPU-6000 seems to need the ability to toggle CS which the current board does not support. Board revision is needed.
-	3. Magnetometer
+		2. Pick new Gyro/Accelerometer
+	3. ❌ Magnetometer
+		* Can't be detected with an I2C scanner, probably dead.
 	4. Barometric pressure sensor
-	5. On board F-RAM
+		1. ✔️ Check if it can be found with the I2C scanner.
+		2. Check is values are sensible.
+	5. ❌ On board F-RAM
+		* Wrong IC choice on my part.
 	6. ESC control
 	7. IBUS communication
-	8. Buzzer and LEDs
+	8. Buzzer
+	9. ✔️ LEDs
 7. Writing drivers
 	1. Gyro/Accelerometer
 	2. Magnetometer
