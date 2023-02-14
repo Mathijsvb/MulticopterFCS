@@ -2,6 +2,11 @@
 
 MulticopterFCS is a flight controller build from the ground up. It is meant to be a development platform mainly focused on autonomous indoor flying of multi-rotor drones. 
 
+
+> **Warning**
+> The current version still contains design errors.
+
+
 |Diagram|Board|
 |---|---|
 |![DrawIO block diagrams-Pagina-5 drawio (3)](https://user-images.githubusercontent.com/99826862/185192702-edf96999-37d7-4a41-971a-ddd6ecabeabc.png)|![WhatsApp Image 2022-08-17 at 5 33 48 PM](https://user-images.githubusercontent.com/99826862/185181215-c10b3f6e-3cc6-4cf2-8778-ef5579de345e.jpeg)|
@@ -41,8 +46,9 @@ MulticopterFCS is a flight controller build from the ground up. It is meant to b
 5. ✔️ Manufacturing the PCB
 6.  Testing
 	1. ✔️ Programming MCU
-	2. ❌ Gyro/Accelerometer
-		1.  Find a solution to the Gyro/Accelerometer not working
+	2. ⚠ Gyro/Accelerometer
+		1.  ✔️ Find a the reason for to the Gyro/Accelerometer not working
+		*   The MPU-6000 seems to need the ability to toggle CS which the current board does not support. Board revision is needed.
 	3. Magnetometer
 	4. Barometric pressure sensor
 	5. On board F-RAM
